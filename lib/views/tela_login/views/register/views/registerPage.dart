@@ -20,25 +20,30 @@ class _RegisterPageState extends State<RegisterPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-              alignment: Alignment.center,
-              width: 150,
-              height: 60,
-              decoration: BoxDecoration(
-                  color: Colors.blueAccent,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(width: 1, color: Colors.red)),
-              child: Text(
-                'Cadastro',
-                style: TextStyle(fontSize: 18, color: Colors.white),
-              )),
+            alignment: Alignment.center,
+            width: 300,
+            height: 60,
+            decoration: BoxDecoration(
+                // color: Colors.red,
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  width: 1,
+                )),
+            child: const Text(
+              'Register Page',
+              style: TextStyle(fontSize: 18, color: Colors.black),
+            ),
+          ),
           TextFormFieldDefault(
               controllerTextformField: cpfTextController, labelText: 'CPF'),
           TextFormFieldDefault(
               controllerTextformField: rgTextController, labelText: 'RG'),
           TextFormFieldDefault(
+              controllerTextformField: nameTextController, labelText: 'Name'),
+          TextFormFieldDefault(
               controllerTextformField: nameTextController,
-              labelText: 'Nome completo'),
-          BottonDefault(text: 'Cadastrar', onTap: () {})
+              labelText: 'Last name'),
+          BottonDefault(text: 'Send', onTap: () {})
         ],
       ),
     );
