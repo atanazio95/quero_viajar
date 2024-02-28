@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quero_viajar/views/tela_login/views/register/views/registerPage.dart';
+import 'package:quero_viajar/views/register/views/registerPage.dart';
 import 'package:quero_viajar/views/widgets/bottonDefault.dart';
 import 'package:quero_viajar/views/widgets/textFormFieldDefault.dart';
 
