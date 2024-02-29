@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quero_viajar/views/myConfig/views/myConfigPage.dart';
+import 'package:quero_viajar/views/register/views/registerPage.dart';
 
 class CustonBottonAppBar extends StatelessWidget {
   const CustonBottonAppBar({
@@ -34,7 +36,12 @@ class CustonBottonAppBar extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MyConfigPage()));
+            },
             icon: Icon(
               Icons.person,
               color: Colors.white,
