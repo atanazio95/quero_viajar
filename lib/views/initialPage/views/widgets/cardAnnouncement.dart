@@ -14,22 +14,20 @@ class _CardAnnouncementState extends State<CardAnnouncement> {
     final heigthScreen = MediaQuery.of(context).size.height;
     final widthScreen = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0, top: 8),
+      padding: const EdgeInsets.only(bottom: 1.0, top: 1),
       child: Container(
         decoration: BoxDecoration(
             // color: Colors.grey,
             border: Border.all(
-          width: widthScreen * 0.005,
+          width: widthScreen * 0.002,
         )),
         height: heigthScreen * 0.2,
         width: widthScreen * 0.9,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Image.network(
               'https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/02/221223090704-03-bugatti-chiron-profilee.jpg?w=1024',
-              // width: widthScreen * 0.6,
-              // height: heigthScreen * 1,
             ),
             const Text(
               'Seu anuncio',

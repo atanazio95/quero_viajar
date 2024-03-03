@@ -18,17 +18,19 @@ class _MyConfigPageState extends State<MyConfigPage> {
     final largura = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      appBar: CustomAppBar(title: 'My config'),
+      appBar: const CustomAppBar(title: 'My settings'),
       bottomNavigationBar: CustonBottonAppBar(),
       body: Column(
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(top: 8.0, bottom: 24),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(
+                  width: largura * 0.1,
+                ),
                 Text(
-                  'Hi, Fulano!',
+                  'Hi, Michael J.!',
                   style: TextStyle(fontSize: 18),
                 )
               ],
@@ -42,20 +44,17 @@ class _MyConfigPageState extends State<MyConfigPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  alignment: Alignment.center,
-                  decoration: const BoxDecoration(color: Colors.grey),
-                  height: altura * 0.5,
-                  width: largura * 0.3,
-                  child: const Text(
-                    "Foto",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                Column(
+                    alignment: Alignment.center,
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(90)),
+                    height: altura * 0.5,
+                    width: largura * 0.3,
+                    child: Image.asset("lib/assets/avatar-de-perfil.png")),
+                const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Name",
+                      "Michael Jackson",
                       style: TextStyle(fontSize: 14),
                     ),
                     Text(
@@ -63,7 +62,7 @@ class _MyConfigPageState extends State<MyConfigPage> {
                       style: TextStyle(fontSize: 10),
                     ),
                     Text(
-                      "Type",
+                      "Seller",
                       style: TextStyle(fontSize: 14),
                     ),
                     Text(
@@ -76,19 +75,16 @@ class _MyConfigPageState extends State<MyConfigPage> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: altura * 0.1),
-            child: Column(
-              children: [
-                const ButtomClassic(text: "Profile", icon: Icons.person),
-                const ButtomClassic(text: "Settings", icon: Icons.settings),
-                const ButtomClassic(
-                    text: "Announcement", icon: Icons.analytics),
-                const ButtomClassic(text: "Finance", icon: Icons.money),
-                Padding(
-                  padding: EdgeInsets.only(top: altura * 0.08),
-                  child:
-                      const ButtomClassic(text: "Logout", icon: Icons.logout),
-                )
+            padding: EdgeInsets.only(top: altura * 0.05),
+            child: ListView(
+              physics: const ClampingScrollPhysics(),
+              shrinkWrap: true,
+              children: const [
+                ButtomClassic(text: "Profile", icon: Icons.person),
+                ButtomClassic(text: "Settings", icon: Icons.settings),
+                ButtomClassic(text: "Announcement", icon: Icons.analytics),
+                ButtomClassic(text: "Finance", icon: Icons.money),
+                ButtomClassic(text: "Logout", icon: Icons.logout)
               ],
             ),
           )
@@ -109,28 +105,44 @@ class ButtomClassic extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        style: ElevatedButton.styleFrom(
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.zero,
-            ),
-            backgroundColor: Colors.black),
+    return Container(
+      padding: EdgeInsets.zero,
+      decoration: const BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: Colors.grey,
+            width: 0.5,
+          ),
+        ),
+      ),
+      child: TextButton(
         onPressed: () {},
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Icon(
-              icon,
-              color: Colors.white,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  icon,
+                  color: Colors.grey,
+                ),
+                const SizedBox(width: 18),
+                Text(
+                  text,
+                  style: const TextStyle(color: Colors.grey),
+                ),
+              ],
             ),
-            const SizedBox(
-              width: 24,
-            ),
-            Text(
-              text,
-              style: TextStyle(color: Colors.white),
-            )
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.arrow_forward_ios,
+                  color: Colors.grey,
+                ))
           ],
-        ));
+        ),
+      ),
+    );
   }
 }

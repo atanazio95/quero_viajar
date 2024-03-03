@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quero_viajar/views/initialPage/views/initialPage.dart';
-import 'package:quero_viajar/views/tela_login/views/login/view/loginPage.dart';
 
 void main() {
   runApp(const MyApp());

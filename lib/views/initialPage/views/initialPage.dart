@@ -15,17 +15,24 @@ class _InitialPageState extends State<InitialPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'Sua empresa'),
-      body: Container(
-        child: ListView(
-          children: [
-            CardAnnouncement(colorCard: Colors.black),
-            CardAnnouncement(colorCard: Colors.red),
-            CardAnnouncement(colorCard: Colors.green),
-            CardAnnouncement(colorCard: Colors.white),
-            CardAnnouncement(colorCard: Colors.blueGrey)
-          ],
-        ),
+      appBar: const CustomAppBar(title: 'Sua empresa'),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.cyan,
+        hoverColor: Colors.black,
+        shape: const CircleBorder(),
+        child: const Icon(Icons.add),
+        onPressed: () {},
+      ),
+      body: ListView(
+        physics: const ClampingScrollPhysics(),
+        shrinkWrap: true,
+        children: const [
+          CardAnnouncement(colorCard: Colors.black),
+          CardAnnouncement(colorCard: Colors.red),
+          CardAnnouncement(colorCard: Colors.green),
+          CardAnnouncement(colorCard: Colors.white),
+          CardAnnouncement(colorCard: Colors.blueGrey)
+        ],
       ),
       bottomNavigationBar: CustonBottonAppBar(),
     );

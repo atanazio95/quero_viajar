@@ -10,7 +10,8 @@ class CustonBottonAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: Colors.black,
+      height: 60,
+      color: Colors.cyan,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
